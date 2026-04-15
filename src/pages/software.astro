@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Software · Guillermo Parada" prose={true}>
+  <h1 class="page-title">Software</h1>
+  <p class="page-lead">
+    Open-source tools and reproducible workflows that I have developed or contributed to, with a
+    focus on alternative splicing analysis, microexon discovery, and RNA regulatory genomics.
+  </p>
+
+  <h2>MicroExonator</h2>
+  <p>
+    <strong>MicroExonator</strong> is a Snakemake-based workflow for the <em>de novo</em> discovery
+    and quantification of microexons from RNA-seq data. It was designed to address a common
+    limitation of standard RNA-seq pipelines: very short exons are often missed by general-purpose
+    splicing workflows. MicroExonator enables systematic microexon discovery and PSI quantification
+    across bulk and selected full-length or total-RNA single-cell RNA-seq datasets.
+  </p>
+  <p>
+    <strong>Keywords:</strong> Snakemake, RNA-seq, microexons, alternative splicing, PSI,
+    reproducible workflows.
+  </p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="https://github.com/hemberg-lab/MicroExonator" target="_blank" rel="noopener">GitHub repository</a>
+    <a class="btn" href="https://doi.org/10.1186/s13059-020-02246-2" target="_blank" rel="noopener">Genome Biology, 2021</a>
+    <a class="btn" href="https://doi.org/10.1007/978-1-0716-2521-7_8" target="_blank" rel="noopener">Methods chapter (2022)</a>
+  </div>
+
+  <h2>Workflow and analysis identity</h2>
+  <p>
+    Beyond MicroExonator, my work uses reproducible workflow management, large-scale RNA-seq
+    processing, and machine learning to study RNA regulation across tissues, cell types, and
+    disease cohorts. I develop and maintain Snakemake pipelines that combine splicing quantification
+    with sequence-based machine-learning models, integrated with family-based genetics for variant
+    interpretation in neurodevelopmental disorders.
+  </p>
+
+  <h2>Technical skills</h2>
+  <ul class="skills">
+    <li>Python</li>
+    <li>R</li>
+    <li>Unix / shell</li>
+    <li>Snakemake</li>
+    <li>Git</li>
+    <li>Conda</li>
+    <li>HPC</li>
+    <li>GPU computing</li>
+    <li>PyTorch / JAX</li>
+    <li>Bulk RNA-seq</li>
+    <li>Single-cell RNA-seq</li>
+    <li>Total-RNA sequencing</li>
+    <li>Alternative splicing analysis</li>
+    <li>Microexon discovery</li>
+    <li>PSI quantification</li>
+    <li>Sequence-based splicing models</li>
+    <li>Variant effect prediction</li>
+    <li>Rare-variant / family-based genetics</li>
+  </ul>
+
+  <h2>GitHub profile</h2>
+  <p>
+    All code is hosted under open-source licences.
+    <br />
+    <a href="https://github.com/geparada" target="_blank" rel="noopener">
+      github.com/geparada
+    </a>
+  </p>
+</Layout>

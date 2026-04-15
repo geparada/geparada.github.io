@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+
+const selected = [
+  {
+    title: 'Alu-mediated RNA duplexes are associated with widespread exon skipping across primate transcriptomes',
+    authors: 'Lee, H.*; Cao, X.*; Parada, G.E.*#; Li, J.D.; Iosub, I.A.; Braunschweig, U.; Rebelo, K.; Ule, J.; Wan, Y.#; Blencowe, B.J.#',
+    venue: 'Genome Biology',
+    year: '2026',
+    contribution:
+      'Co-first and co-corresponding author; helped establish RNA duplexes as a major layer of primate-specific splicing regulation.',
+    links: [
+      { label: 'DOI', href: 'https://doi.org/10.1186/s13059-026-03522-6' },
+    ],
+  },
+  {
+    title: 'Alternative splicing modulation by G-quadruplexes',
+    authors: 'Georgakopoulos-Soares, I.*; Parada, G.E.*; Wong, H.Y.; Medhi, R.; Furlan, G.; Munita, R.; et al.',
+    venue: 'Nature Communications',
+    year: '2022',
+    contribution:
+      'Co-led the study and analyses; showed that G-quadruplex structures modulate alternative splicing transcriptome-wide.',
+    links: [
+      { label: 'DOI', href: 'https://doi.org/10.1038/s41467-022-30071-7' },
+    ],
+  },
+  {
+    title: 'MicroExonator enables systematic discovery and quantification of microexons across mouse embryonic development',
+    authors: 'Parada, G.E.; Munita, R.; Georgakopoulos-Soares, I.; Fernandes, H.J.R.; Kedlian, V.R.; Metzakopian, E.; et al.',
+    venue: 'Genome Biology',
+    year: '2021',
+    contribution:
+      'Sole first author; developed MicroExonator and generated a systematic microexon atlas across mouse development.',
+    links: [
+      { label: 'DOI', href: 'https://doi.org/10.1186/s13059-020-02246-2' },
+      { label: 'Code', href: 'https://github.com/hemberg-lab/MicroExonator' },
+    ],
+  },
+  {
+    title: 'A comprehensive survey of non-canonical splice sites in the human transcriptome',
+    authors: 'Parada, G.E.*; Munita, R.*; Cerda, C.A.; Gysling, K.#',
+    venue: 'Nucleic Acids Research',
+    year: '2014',
+    contribution:
+      'Co-first author; mapped high-confidence non-canonical splice sites in the human transcriptome.',
+    links: [
+      { label: 'DOI', href: 'https://doi.org/10.1093/nar/gku744' },
+    ],
+  },
+];
+
+const additional = [
+  'Dupas, S.J.; Parada, G.E.; Li, J.D.; Brown, K.R.; Moffat, J.; Blencowe, B.J. <em>Splice isoform perturbation coupled to single-cell transcriptome profiling reveals functions of microexons in neurogenesis and autism-linked pathways.</em> <span class="pub-venue-inline">Nature Communications, 2026.</span>',
+  'Georgakopoulos-Soares, I.; Yizhar-Barnea, O.; Mouratidis, I.; …; Parada, G.E.; et al. <em>Leveraging sequences missing from the human genome to diagnose cancer.</em> <span class="pub-venue-inline">Communications Medicine, 2025.</span>',
+  'Song, Y.; Parada, G.E.; Lee, J.T.H.; Hemberg, M. <em>Mining alternative splicing patterns in scRNA-seq data using scASfind.</em> <span class="pub-venue-inline">Genome Biology, 2024.</span>',
+  'Salmen, F.*; De Jonghe, J.*; Kaminski, T.; Alemany, A.; Parada, G.E.; …; Hemberg, M.; Hollfelder, F.; van Oudenaarden, A. <em>High-throughput total RNA sequencing in single cells.</em> <span class="pub-venue-inline">Nature Biotechnology, 2022.</span>',
+  'Han, H.; Best, A.J.; Braunschweig, U.; Mikolajewicz, N.; Li, J.L.; …; Parada, G.E.; et al. <em>Systematic exploration of dynamic splicing networks reveals conserved multistage regulators of neurogenesis.</em> <span class="pub-venue-inline">Molecular Cell, 2022.</span>',
+  'Parada, G.E.; Hemberg, M. <em>Identification and Quantification of Microexons Using Bulk and Single-Cell RNA-Seq Data.</em> <span class="pub-venue-inline">Methods in Molecular Biology, 2022.</span>',
+  'Georgakopoulos-Soares, I.; Parada, G.E.; Hemberg, M. <em>Secondary structures in RNA synthesis, splicing and translation.</em> <span class="pub-venue-inline">Computational and Structural Biotechnology Journal, 2022.</span>',
+  'Georgakopoulos-Soares, I.; Victorino, J.; Parada, G.E.; Agarwal, V.; Zhao, J.; et al. <em>High-throughput characterization of the role of non-B DNA motifs on promoter function.</em> <span class="pub-venue-inline">Cell Genomics, 2022.</span>',
+  'Parada, G.E.; Hemberg, M. <em>Bridge over troubled transcripts.</em> <span class="pub-venue-inline">Nature Computational Science, 2022.</span>',
+  'Gapp, K.; Parada, G.E.; Gross, F.; Corcoba, A.; Kaur, J.; Grau, E.; Hemberg, M.; Bohacek, J.; Miska, E.A. <em>Single paternal dexamethasone challenge programs offspring metabolism and reveals multiple candidates in RNA-mediated inheritance.</em> <span class="pub-venue-inline">iScience, 2021.</span>',
+  'Urbonaite, G.; Lee, J.T.H.; Liu, P.; Parada, G.E.; Hemberg, M.; Acar, M. <em>A yeast-optimized single-cell transcriptomics platform elucidates how mycophenolic acid and guanine alter global mRNA levels.</em> <span class="pub-venue-inline">Communications Biology, 2021.</span>',
+  'Georgakopoulos-Soares, I.; Mouratidis, I.; Parada, G.E.; Matharu, N.; Hemberg, M.; Ahituv, N. <em>Asymmetron: a toolkit for the identification of strand asymmetry patterns in biological sequences.</em> <span class="pub-venue-inline">Nucleic Acids Research, 2021.</span>',
+  'Akay, A.; Di Domenico, T.; Suen, K.M.; Nabih, A.; Parada, G.E.; et al. <em>The helicase Aquarius/EMB-4 is required to overcome intronic barriers to allow nuclear RNAi pathways to heritably silence transcription.</em> <span class="pub-venue-inline">Developmental Cell, 2017.</span>',
+  'Sáez, J.E.; Gómez, A.V.; Barrios, Á.P.; Parada, G.E.; Galdames, L.; González, M.; Andrés, M.E. <em>Decreased expression of CoREST1 and CoREST2 together with LSD1 and HDAC1/2 during neuronal differentiation.</em> <span class="pub-venue-inline">PLOS ONE, 2015.</span>',
+  'Gómez, A.V.; Córdova, G.; Munita, R.; Parada, G.E.; Barrios, Á.P.; Cancino, G.I.; Álvarez, A.R.; Andrés, M.E. <em>Characterizing HSF1 binding and post-translational modifications of the hsp70 promoter in cultured cortical neurons.</em> <span class="pub-venue-inline">PLOS ONE, 2015.</span>',
+  'von Bernhardi, R.; Cornejo, F.; Parada, G.E.; Eugenín, J. <em>Role of TGF-β signalling in the pathogenesis of Alzheimer\'s disease.</em> <span class="pub-venue-inline">Frontiers in Cellular Neuroscience, 2015.</span>',
+];
+---
+<Layout title="Publications · Guillermo Parada">
+  <h1 class="page-title">Publications</h1>
+  <p class="page-lead">
+    A selection of my peer-reviewed publications. A complete list is
+    available on my
+    <a href="https://scholar.google.com/citations?user=PTLeXysAAAAJ" target="_blank" rel="noopener">Google Scholar profile</a>.
+  </p>
+
+  <p class="note">
+    <strong>Notation:</strong> <code>*</code> denotes equal contribution; <code>#</code> denotes
+    corresponding author.
+  </p>
+
+  <section class="section">
+    <h2 class="section-title">Selected publications</h2>
+    <ul class="pub-list">
+      {selected.map((p) => (
+        <PublicationCard {...p} />
+      ))}
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Additional selected publications</h2>
+    <ul class="pub-compact">
+      {additional.map((entry) => (
+        <li set:html={entry}></li>
+      ))}
+    </ul>
+  </section>
+</Layout>

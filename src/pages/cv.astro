@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="CV · Guillermo Parada" prose={true}>
+  <h1 class="page-title">Curriculum Vitae</h1>
+  <p class="page-lead">
+    Structured overview of my current position, training, fellowships, and technical skills.
+    A downloadable PDF version is available below.
+  </p>
+
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/Guillermo_Parada_CV.pdf" target="_blank" rel="noopener">
+      Download CV (PDF)
+    </a>
+  </div>
+
+  <h2>Current position</h2>
+  <table class="cv-table">
+    <tbody>
+      <tr>
+        <td>2025&nbsp;– present</td>
+        <td>
+          <strong>Postdoctoral Researcher</strong>, Centre for Developmental Neurobiology,
+          King's College London.
+          <br />
+          <strong>Visitor Scientist</strong>, Brain RNA Regulatory Networks Laboratory,
+          The Francis Crick Institute.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Education and training</h2>
+  <table class="cv-table">
+    <tbody>
+      <tr>
+        <td>2021 – 2025</td>
+        <td>
+          <strong>Postdoctoral Fellow</strong>, Blencowe Laboratory, Donnelly Centre,
+          University of Toronto.
+        </td>
+      </tr>
+      <tr>
+        <td>2020</td>
+        <td>
+          <strong>Research Associate</strong>, Hemberg Laboratory, Wellcome Sanger Institute.
+        </td>
+      </tr>
+      <tr>
+        <td>2015 – 2022</td>
+        <td>
+          <strong>PhD, Biological Sciences</strong>, University of Cambridge
+          (Wellcome Sanger Institute and the Gurdon Institute).
+          <br />
+          Supervisors: Martin Hemberg (Sanger) and Eric A. Miska (Gurdon).
+        </td>
+      </tr>
+      <tr>
+        <td>2007 – 2012</td>
+        <td>
+          <strong>Professional Degree and Licentiate in Biochemistry</strong>,
+          Pontificia Universidad Católica de Chile. Awarded Biochemist with Distinction.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Fellowships and awards</h2>
+  <ul>
+    <li><strong>Charles H. Best Postdoctoral Fellowship</strong>, University of Toronto, 2022.</li>
+    <li><strong>Wellcome Trust Four-Year Doctoral Studentship</strong>, University of Cambridge, 2015.</li>
+    <li><strong>Best Talk Prize</strong>, Molecular Biosystems Conference on Eukaryotic Gene Regulation &amp; Functional Genomics, 2019.</li>
+    <li><strong>Best Poster Prize</strong>, ISCB Latin America Conference on Bioinformatics, 2012.</li>
+    <li><strong>Biochemist with Distinction</strong>, Pontificia Universidad Católica de Chile, 2012.</li>
+  </ul>
+
+  <h2>Technical skills</h2>
+  <p>
+    <strong>Programming and analysis:</strong> Python, R, Unix/shell scripting.
+    <br />
+    <strong>Workflow and infrastructure:</strong> Snakemake, Git, Conda, HPC, GPU computing.
+    <br />
+    <strong>Transcriptomics:</strong> bulk RNA-seq, single-cell RNA-seq, total-RNA sequencing,
+    alternative splicing analysis, microexon discovery, PSI quantification.
+    <br />
+    <strong>Machine learning:</strong> supervised models, sequence-based splicing models, model
+    interpretation, variant effect prediction.
+    <br />
+    <strong>Genomics:</strong> rare variant analysis, family-based autism genetics, regulatory
+    variant interpretation.
+  </p>
+
+  <h2>Mentoring and collaboration</h2>
+  <p>
+    I have contributed to the development and mentorship of collaborative computational projects,
+    including work with Hyunbeen "Jason" Lee on Alu-mediated RNA duplexes and exon skipping
+    in primate transcriptomes (<em>Genome Biology</em>, 2026, co-first and co-corresponding author).
+    Earlier mentorship includes work with Yuyao Song on alternative splicing in single-cell RNA-seq,
+    culminating in a <em>Genome Biology</em> publication (scASfind, 2024).
+  </p>
+
+  <h2>Teaching and training</h2>
+  <p>
+    I have taught on the Wellcome Genome Campus Advanced Course on Next Generation Sequencing
+    Bioinformatics in Chile (2019, 2021) and on University of Cambridge courses in RNA-seq
+    analysis, Python programming, data science in Python, and computational methods for biological
+    data analysis (2017–2019).
+  </p>
+
+  <h2>Selected presentations</h2>
+  <ul>
+    <li>
+      <strong>2026</strong> — The regulatory code for neuronal microexons: implications for the
+      genetics of autism spectrum disorder. Cambridge RNA Club, University of Cambridge (invited talk).
+    </li>
+    <li>
+      <strong>2026</strong> — 31st Annual Meeting of the RNA Society, Montréal (selected Flash Talk
+      poster presentation).
+    </li>
+    <li>
+      <strong>2021</strong> — Uncovering alternative splicing patterns of microexons across mouse
+      development and neuronal cell types. Neurogenomics Seminar Series, UK DRI Centre at Imperial
+      College London (invited talk).
+    </li>
+    <li>
+      <strong>2019</strong> — Alternative splicing modulation by G-quadruplexes. Molecular
+      Biosystems Conference, Puerto Varas, Chile (selected talk; Best Talk Prize).
+    </li>
+  </ul>
+
+  <p class="note">
+    For a complete list of publications, presentations, teaching, and referees, please see the
+    <a href="/Guillermo_Parada_CV.pdf" target="_blank" rel="noopener">downloadable CV (PDF)</a>.
+  </p>
+</Layout>

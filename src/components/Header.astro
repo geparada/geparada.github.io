@@ -1,0 +1,28 @@
+---
+const { pathname } = Astro.url;
+const isActive = (href) => {
+  if (href === '/') return pathname === '/' || pathname === '';
+  return pathname.startsWith(href);
+};
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/research/', label: 'Research' },
+  { href: '/publications/', label: 'Publications' },
+  { href: '/software/', label: 'Software' },
+  { href: '/cv/', label: 'CV' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-title">
+      <a href="/">Guillermo Parada <span class="subtle">· Computational Biology</span></a>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      {navItems.map(({ href, label }) => (
+        <a href={href} class={isActive(href) ? 'active' : ''}>{label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

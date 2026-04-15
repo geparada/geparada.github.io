@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+
+const researchThemes = [
+  {
+    title: 'Microexons and neuronal splicing',
+    description:
+      'Systematic discovery and quantification of microexons, with a focus on brain-enriched, developmentally regulated splicing programs and autism-associated genetic variation.',
+  },
+  {
+    title: 'Machine learning for RNA regulatory grammar',
+    description:
+      'Interpretable sequence-to-splicing models that connect local sequence context and splicing regulatory motifs to exon inclusion and variant effect prediction.',
+  },
+  {
+    title: 'RNA structure and alternative splicing',
+    description:
+      'Transcriptome-scale analyses of RNA secondary structures — including G-quadruplexes and Alu-mediated RNA duplexes — as regulatory layers that shape exon inclusion.',
+  },
+];
+
+const highlights = [
+  {
+    title: 'Alu-mediated RNA duplexes are associated with widespread exon skipping across primate transcriptomes',
+    authors: 'Lee, H.*; Cao, X.*; Parada, G.E.*#; Li, J.D.; Iosub, I.A.; Braunschweig, U.; Rebelo, K.; Ule, J.; Wan, Y.#; Blencowe, B.J.#',
+    venue: 'Genome Biology',
+    year: '2026',
+    contribution:
+      'Co-first and co-corresponding author; helped establish RNA duplexes as a major layer of primate-specific splicing regulation.',
+    links: [
+      { label: 'DOI', href: 'https://doi.org/10.1186/s13059-026-03522-6' },
+    ],
+  },
+  {
+    title: 'MicroExonator enables systematic discovery and quantification of microexons across mouse embryonic development',
+    authors: 'Parada, G.E.; Munita, R.; Georgakopoulos-Soares, I.; Fernandes, H.J.R.; Kedlian, V.R.; Metzakopian, E.; et al.',
+    venue: 'Genome Biology',
+    year: '2021',
+    contribution: 'Sole first author; developed MicroExonator and a systematic microexon atlas across mouse development.',
+    links: [
+      { label: 'DOI', href: 'https://doi.org/10.1186/s13059-020-02246-2' },
+      { label: 'Code', href: 'https://github.com/hemberg-lab/MicroExonator' },
+    ],
+  },
+];
+---
+<Layout>
+  <section class="hero">
+    <div class="hero-inner">
+      <img
+        src="/images/Guillermo_Parada.png"
+        alt="Guillermo Parada González"
+        class="profile-photo"
+        width="140"
+        height="140"
+      />
+      <div class="hero-text">
+        <h1>Guillermo Parada González</h1>
+        <p class="tagline">Computational biology, RNA regulation, and machine learning for neurogenomics.</p>
+        <p class="affiliation">
+          Postdoctoral Researcher · Centre for Developmental Neurobiology, King's College London
+          <br />
+          Visitor Scientist · The Francis Crick Institute
+        </p>
+        <p class="lead">
+          I develop computational and machine-learning methods to understand how alternative splicing is
+          regulated in the brain, and how genetic variation disrupts RNA regulatory programs in
+          neurodevelopmental disorders. My work combines scalable bioinformatic workflows,
+          interpretable sequence models, and family-based human genetics.
+        </p>
+      </div>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/research/">Research</a>
+      <a class="btn" href="/publications/">Publications</a>
+      <a class="btn" href="/software/">Software</a>
+      <a class="btn" href="/cv/">CV</a>
+      <a class="btn" href="/contact/">Contact</a>
+    </div>
+    <div class="btn-row" style="margin-top: 0.5rem; padding-left: 0;">
+      <a class="btn" href="https://scholar.google.com/citations?user=PTLeXysAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="btn" href="https://github.com/geparada" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/geparada/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://bsky.app/profile/geparada.bsky.social" target="_blank" rel="noopener">BlueSky</a>
+    </div>
+  </section>
+
+  <style>
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .profile-photo {
+      flex-shrink: 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--color-border);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.10);
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-text h1 {
+      margin-top: 0;
+    }
+
+    /* On small screens, stack vertically and center the photo */
+    @media (max-width: 560px) {
+      .hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .profile-photo {
+        width: 110px;
+        height: 110px;
+      }
+    }
+  </style>
+
+  <section class="section">
+    <h2 class="section-title">Research themes</h2>
+    <div class="research-grid">
+      {researchThemes.map(({ title, description }) => (
+        <ResearchCard title={title} description={description} />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Selected publication highlights</h2>
+    <ul class="pub-list">
+      {highlights.map((p) => (
+        <PublicationCard {...p} />
+      ))}
+    </ul>
+    <p style="margin-top: 1rem;"><a href="/publications/">See all selected publications →</a></p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">About</h2>
+    <p>
+      I am a postdoctoral researcher in molecular and computational biology at King's College London,
+      with Visitor Scientist status at The Francis Crick Institute. My work focuses on the regulation
+      of alternative splicing in the nervous system, with a particular emphasis on microexons, RNA
+      regulatory elements, and disease-relevant genetic variation.
+    </p>
+    <p>
+      I develop and apply computational methods for large-scale RNA-seq analysis, splicing
+      quantification, and machine-learning models of RNA regulatory grammar. A central theme of my
+      work is to connect transcriptomic regulation with human genetics, especially in autism and
+      broader neurodevelopmental disorders.
+    </p>
+    <p>
+      My research trajectory has been shaped by building tools first, using those tools at
+      transcriptome scale, and then connecting the resulting molecular maps to disease mechanisms
+      and variant interpretation.
+    </p>
+  </section>
+</Layout>

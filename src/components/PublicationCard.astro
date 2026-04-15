@@ -1,0 +1,34 @@
+---
+const {
+  title,
+  authors,
+  venue,
+  year,
+  contribution,
+  links = [],
+  status,
+} = Astro.props;
+---
+<li class="pub-card">
+  <p class="pub-title">{title}</p>
+  <p class="pub-authors" set:html={authors}></p>
+  <p class="pub-venue">
+    {status ? <em>{status}</em> : venue}
+    {year ? <span class="year"> · {year}</span> : null}
+  </p>
+  {contribution ? <p class="pub-contribution">{contribution}</p> : null}
+  {links.length > 0 ? (
+    <div class="pub-links">
+      {links.map((link) => (
+        <a
+          class={`pub-link${link.href === '#' || !link.href ? ' todo' : ''}`}
+          href={link.href || '#'}
+          target={link.href && link.href !== '#' ? '_blank' : undefined}
+          rel={link.href && link.href !== '#' ? 'noopener' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  ) : null}
+</li>

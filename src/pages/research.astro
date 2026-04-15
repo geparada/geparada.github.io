@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Research · Guillermo Parada" prose={true}>
+  <h1 class="page-title">Research</h1>
+  <p class="page-lead">
+    I work at the interface of RNA biology, machine learning, and neurogenomics, with a focus on
+    how alternative splicing is regulated in the brain and how genetic variation disrupts RNA
+    regulatory programs in neurodevelopmental disorders.
+  </p>
+
+  <h2>Overview</h2>
+  <p>
+    My research connects three complementary threads: (i) the systematic discovery and quantification
+    of regulated splicing events — in particular microexons — from large-scale RNA-seq data; (ii)
+    interpretable machine-learning models of the sequence and structural grammar that governs exon
+    inclusion; and (iii) the integration of these molecular maps with human genetics to interpret
+    disease-relevant variants. A common thread is reproducible workflow engineering that scales from
+    single datasets to transcriptome-wide, cohort-scale analyses.
+  </p>
+
+  <h2>Microexons and neuronal splicing regulation</h2>
+  <p>
+    Microexons are very short exons whose inclusion is often tightly regulated across tissues,
+    developmental stages, and neuronal cell types. My work has helped make systematic microexon
+    discovery and quantification practical through <a href="/software/">MicroExonator</a>, and has
+    connected microexon regulation to neuronal development and autism biology.
+  </p>
+  <p>
+    Key themes include microexon discovery and quantification, neuronal alternative splicing,
+    brain-enriched and developmentally regulated splicing programs, and autism-associated genetic
+    variation affecting microexon regulation.
+  </p>
+
+  <h2>Machine learning for splicing and variant interpretation</h2>
+  <p>
+    I use machine learning to model the regulatory logic controlling microexon inclusion. The goal
+    is to understand how local sequence context, splicing regulatory motifs, and disease-associated
+    variants affect exon inclusion in brain-relevant transcripts, and to use these models for
+    variant effect prediction.
+  </p>
+  <p>
+    Key themes: interpretable machine learning for RNA regulation, sequence-to-splicing models, the
+    regulatory grammar of neuronal microexons, and variant effect prediction for splicing.
+  </p>
+
+  <h2>RNA structure and alternative splicing</h2>
+  <p>
+    I have co-led work showing that RNA secondary structures can modulate alternative splicing at
+    transcriptome scale. This includes G-quadruplexes and Alu-mediated RNA duplexes as regulatory
+    layers that shape exon inclusion and primate-specific transcriptome evolution.
+  </p>
+  <p>
+    Key themes: RNA structure as a splicing regulatory layer, G-quadruplexes, Alu-mediated RNA
+    duplexes, and primate transcriptome evolution.
+  </p>
+
+  <h2>Reproducible computational biology</h2>
+  <p>
+    I care about building scalable and reproducible pipelines. My technical work uses Snakemake,
+    Git, Conda, Unix/HPC environments, and GPU computing for machine-learning workloads, applied to
+    bulk and single-cell RNA-seq, alternative splicing analysis, and RNA regulatory genomics.
+  </p>
+
+  <h2>Current and emerging directions</h2>
+  <blockquote>
+    Current work explores RNA regulatory mechanisms and transcriptomic signatures in brain
+    disorders. I am interested in how RNA regulation, splicing, and genetic variation interact
+    in neurodevelopmental disease.
+  </blockquote>
+</Layout>

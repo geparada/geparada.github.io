@@ -1,0 +1,14 @@
+---
+const { title, description, href } = Astro.props;
+---
+{href ? (
+  <a class="research-card" href={href} style="text-decoration: none; border: 1px solid var(--color-border);">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </a>
+) : (
+  <div class="research-card">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+)}
